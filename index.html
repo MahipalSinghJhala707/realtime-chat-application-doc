@@ -10,6 +10,8 @@
       
       
       
+        <link rel="next" href="behavior/">
+      
       
         
       
@@ -19,7 +21,7 @@
     
     
       
-        <title>My Docs</title>
+        <title>Realtime Chat App Documentation</title>
       
     
     
@@ -60,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#chat-application-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -76,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+    <a href="." title="Realtime Chat App Documentation" class="md-header__button md-logo" aria-label="Realtime Chat App Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -90,13 +92,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            My Docs
+            Realtime Chat App Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Welcome to MkDocs
+              Overview
             
           </span>
         </div>
@@ -174,13 +176,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+    <a href="." title="Realtime Chat App Documentation" class="md-nav__button md-logo" aria-label="Realtime Chat App Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    My Docs
+    Realtime Chat App Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -208,7 +210,7 @@
   <span class="md-ellipsis">
     
   
-    Welcome to MkDocs
+    Overview
   
 
     
@@ -226,7 +228,7 @@
   <span class="md-ellipsis">
     
   
-    Welcome to MkDocs
+    Overview
   
 
     
@@ -252,10 +254,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
+  <a href="#purpose" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Commands
+        Purpose
       
     </span>
   </a>
@@ -263,10 +265,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
+  <a href="#target-users" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Project layout
+        Target Users
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-system-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the System Does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-system-does-not-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the System Does NOT Do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constraints
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope Philosophy
       
     </span>
   </a>
@@ -277,6 +334,33 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="behavior/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Behavioral Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -308,10 +392,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
+  <a href="#purpose" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Commands
+        Purpose
       
     </span>
   </a>
@@ -319,10 +403,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
+  <a href="#target-users" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Project layout
+        Target Users
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-system-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the System Does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-system-does-not-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the System Does NOT Do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constraints
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope Philosophy
       
     </span>
   </a>
@@ -346,21 +485,67 @@
 
 
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
+<h1 id="chat-application-overview">Chat Application – Overview</h1>
+<h2 id="purpose">Purpose</h2>
+<p>This project is a real-time chat application built as a <strong>learning-focused, production-inspired system</strong>.
+The primary goal is to understand and implement real-world backend concepts such as:</p>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li>Real-time messaging</li>
+<li>End-to-end encryption</li>
+<li>Authorization rules</li>
+<li>Group governance</li>
+<li>Low-cost, serverless-friendly design</li>
 </ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre>
+<p>This is not intended to be a feature-complete WhatsApp or Telegram clone.</p>
+<hr />
+<h2 id="target-users">Target Users</h2>
+<ul>
+<li>A small number of authenticated users (personal use, friends, known contacts)</li>
+<li>Users are identified primarily by mobile number</li>
+<li>The system is not designed for public or anonymous usage</li>
+</ul>
+<hr />
+<h2 id="core-principles">Core Principles</h2>
+<ul>
+<li><strong>Behavior-first design</strong>: system behavior is defined before implementation</li>
+<li><strong>Privacy-first</strong>: messages are end-to-end encrypted</li>
+<li><strong>Low operational cost</strong>: suitable for long-term personal hosting</li>
+<li><strong>Minimal scope</strong>: only essential features are included</li>
+<li><strong>Real-world realism</strong>: trade-offs are intentional and documented</li>
+</ul>
+<hr />
+<h2 id="what-the-system-does">What the System Does</h2>
+<ul>
+<li>Enables private one-to-one messaging</li>
+<li>Supports group messaging with two group models:</li>
+<li>Admin-based groups</li>
+<li>Democratic groups with polling for user removal</li>
+<li>Allows silent blocking in private chats</li>
+<li>Encrypts all messages end-to-end</li>
+<li>Uses mobile number–based discovery</li>
+</ul>
+<hr />
+<h2 id="what-the-system-does-not-do">What the System Does NOT Do</h2>
+<ul>
+<li>Voice or video calling</li>
+<li>Public user discovery</li>
+<li>Message requests or spam prevention</li>
+<li>Content moderation</li>
+<li>Server-side message inspection</li>
+<li>Backup or cross-device message recovery</li>
+</ul>
+<hr />
+<h2 id="constraints">Constraints</h2>
+<ul>
+<li>Serverless-first mindset</li>
+<li>Minimal ongoing cost</li>
+<li>Small, controlled user base</li>
+<li>No dependence on server-side message content</li>
+</ul>
+<hr />
+<h2 id="scope-philosophy">Scope Philosophy</h2>
+<p>This project intentionally prioritizes <strong>clarity and correctness of behavior</strong> over feature breadth.
+Some real-world complexities are deferred or excluded to keep the system understandable and maintainable.</p>
 
 
 
