@@ -1,3 +1,8 @@
-site_name: My Docs
+site_name: Realtime Chat App Documentation
+
+nav:
+  - Welcome: index.md
+  - Behavioral Specification: behavior.md
+
 theme:
   name: material
