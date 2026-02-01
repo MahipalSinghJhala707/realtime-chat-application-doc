@@ -49,43 +49,68 @@ The goal is to clearly describe **how the system behaves from a user and system 
 
 ---
 
-## 3. Private Chats
+## 3. Message Privacy & End-to-End Encryption
 
-### 3.1 Private Chat Definition
+- All messages in the system are **end-to-end encrypted (E2EE)**.
+- Message content is encrypted on the sender’s device.
+- Message content is decrypted only on recipient devices.
+- The backend never has access to plaintext message content.
+
+### 3.1 Server Visibility
+
+The server **may access**:
+- Sender identity
+- Chat or group identifier
+- Message identifiers
+- Timestamps
+
+The server **may not access**:
+- Message text
+- Media content
+- File names or captions
+
+All stored messages are persisted **only in encrypted (ciphertext) form**.
+
+---
+
+## 4. Private Chats
+
+### 4.1 Private Chat Definition
 - A private chat exists between **exactly two users**.
 - There can be **only one private chat per user pair**.
 
-### 3.2 Chat Creation
+### 4.2 Chat Creation
 - Opening a chat UI does **not** create a chat.
 - A private chat is created **only when the first message is sent**.
 - If no message is ever sent, no chat exists.
 
-### 3.3 First Message Flow
+### 4.3 First Message Flow
 1. User A searches User B and opens chat UI.
 2. User A sends the first message.
 3. The system:
    - Creates a private chat
-   - Stores the message
-   - Delivers the message to User B
+   - Stores the encrypted message
+   - Delivers the encrypted message to User B
 4. User B:
    - Receives a notification
    - Sees the new private chat
    - Can reply immediately
 
-### 3.4 Ongoing Messaging
+### 4.4 Ongoing Messaging
 - Once created, both users can freely message each other.
 - Messages are delivered in real time.
+- The backend routes encrypted payloads without inspecting content.
 
 ---
 
-## 4. Blocking Behavior (Silent Block)
+## 5. Blocking Behavior (Silent Block)
 
-### 4.1 Blocking Rules
+### 5.1 Blocking Rules
 - Either user in a private chat can block the other.
 - Blocking is **asymmetric**.
 - Blocking applies **only to private chats**.
 
-### 4.2 Behavior After Blocking
+### 5.2 Behavior After Blocking
 When User A blocks User B:
 
 **User A**
@@ -99,29 +124,29 @@ When User A blocks User B:
 - Receives no error or notification.
 - Messages are silently dropped server-side.
 
-### 4.3 Message Handling
+### 5.3 Message Handling
 - Messages sent during a block:
-  - Are **not stored**
-  - Are **not delivered**
+  - Are **dropped before delivery**
+  - Are **not stored**, even in encrypted form
   - Are **never delivered later**, even if unblocked
 
-### 4.4 Unblocking
+### 5.4 Unblocking
 - When User A unblocks User B:
   - Normal messaging resumes
   - Messages sent during the block are permanently lost
 
 ---
 
-## 5. Groups
+## 6. Groups
 
-### 5.1 Group Creation
+### 6.1 Group Creation
 - Any user can create a group.
 - Minimum group size is **2 users**.
 - A group exists immediately upon creation, even before any messages are sent.
 
-### 5.2 Group Types
+### 6.2 Group Types
 
-#### 5.2.1 Normal Group
+#### 6.2.1 Normal Group
 - One or more admins exist.
 - Admin powers:
   - Add users
@@ -137,7 +162,7 @@ When User A blocks User B:
 
 ---
 
-#### 5.2.2 Democratic Group
+#### 6.2.2 Democratic Group
 - All members have equal privileges.
 - No permanent admin hierarchy.
 - Polling is required **only for removing users**.
@@ -145,20 +170,21 @@ When User A blocks User B:
 
 ---
 
-## 6. Group Membership & Messaging
+## 7. Group Membership & Messaging
 
-### 6.1 Adding Users
+### 7.1 Adding Users
 - Users can be added to groups without their consent.
 
-### 6.2 Messaging
+### 7.2 Messaging
 - All group members receive group messages.
 - Blocking does **not** apply inside groups.
 - Even if two users have blocked each other privately:
   - They still receive each other’s messages in shared groups.
+- Group messages are end-to-end encrypted in the same manner as private messages.
 
 ---
 
-## 7. Polling (Democratic Groups Only)
+## 8. Polling (Democratic Groups Only)
 
 - Polling is used **only** for removing a user from the group.
 - Polling is group-wide.
@@ -169,15 +195,17 @@ When User A blocks User B:
 
 ---
 
-## 8. Scope Notes
+## 9. Scope Notes
 
 - Voice and video calling are out of scope.
 - Message requests and spam prevention are out of scope.
 - Account recovery beyond email fallback is out of scope.
 - Moderation and reporting are out of scope.
+- Server-side message inspection is out of scope.
 
 These decisions are intentional to keep the system:
 
 - Low-cost
 - Serverless-friendly
-- Focused on real-time messaging behavior
+- Privacy-first
+- Focused on real-time encrypted messaging behavior
