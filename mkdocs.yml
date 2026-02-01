@@ -1,7 +1,7 @@
 site_name: Realtime Chat App Documentation
 
 nav:
-  - Welcome: index.md
+  - Overview: index.md
   - Behavioral Specification: behavior.md
 
 theme:
